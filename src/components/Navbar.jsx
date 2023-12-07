@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
 const Navbar = () => {
   return (
     <nav className='flex items-center bg-sky-950 p-3'>
@@ -23,7 +26,7 @@ const Navbar = () => {
       <ul className='ml-auto mr-5 flex'>
         <li>
           <div className='place-content-center rounded-full px-2 py-1 text-white hover:cursor-pointer hover:bg-gray-200 hover:text-sky-950'>
-            <i className='fa-solid fa-cart-shopping text-lg'></i>
+            <FontAwesomeIcon icon={faCartShopping} />
           </div>
         </li>
       </ul>
