@@ -1,6 +1,7 @@
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const ImageSlider = ({ maxWidth, height, slides }) => {
   const maxWidthVariants = {
@@ -50,7 +51,7 @@ const ImageSlider = ({ maxWidth, height, slides }) => {
       <div className='absolute right-5 top-[50%] hidden -translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white group-hover:block'>
         <BsChevronCompactRight size={30} onClick={nextSlide} />
       </div>
-      <div className='flex absolute bottom-10 inset-x-0 justify-center py-2'>
+      <div className='absolute inset-x-0 bottom-10 flex justify-center py-2'>
         {slides.map((slide, slideIndex) => (
           <div
             key={slideIndex}
@@ -65,6 +66,17 @@ const ImageSlider = ({ maxWidth, height, slides }) => {
       </div>
     </div>
   );
+};
+
+ImageSlider.propTypes = {
+  slides: PropTypes.array,
+  maxWidth: PropTypes.oneOf(['small', 'medium', 'large', 'xLarge']),
+  height: PropTypes.oneOf(['small', 'medium', 'large', 'xLarge']),
+};
+
+ImageSlider.defaultProps = {
+  maxWidth: 'medium',
+  height: 'medium',
 };
 
 export default ImageSlider;
