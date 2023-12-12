@@ -69,7 +69,7 @@ const ImageSlider = ({ maxWidth, height, slides }) => {
 };
 
 ImageSlider.propTypes = {
-  slides: PropTypes.array,
+  slides: PropTypes.array.isRequired,
   maxWidth: PropTypes.oneOf(['small', 'medium', 'large', 'xLarge']),
   height: PropTypes.oneOf(['small', 'medium', 'large', 'xLarge']),
 };
