@@ -6,7 +6,9 @@ const HomePage = () => {
   return (
     <>
       <Navbar />
-      <ImageSlider slides={slides} maxWidth={'xLarge'} height={'medium'} />
+      <main className='h-screen bg-slate-200'>
+        <ImageSlider slides={slides} maxWidth={'xLarge'} height={'medium'} />
+      </main>
     </>
   );
 };
