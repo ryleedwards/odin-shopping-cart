@@ -1,3 +1,4 @@
+import ItemsContainer from '../components/ItemsContainer';
 import Navbar from '../components/Navbar';
 
 const ShopPage = () => {
@@ -11,6 +12,7 @@ const ShopPage = () => {
           <h2 className='px-4 py-2 text-3xl font-bold'>{bigText}</h2>
           <h3 className='px-8 text-lg'>{smallText}</h3>
         </div>
+        <ItemsContainer />
       </main>
     </>
   );
