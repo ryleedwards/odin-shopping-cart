@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const ItemCard = ({ item }) => {
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -5,9 +7,9 @@ const ItemCard = ({ item }) => {
     currencyDisplay: 'narrowSymbol',
   }).format(item.price);
   return (
-    <div className=' flex flex-col justify-between w-full max-w-xs rounded-lg border border-gray-200 bg-white shadow '>
+    <div className=' flex w-full max-w-xs flex-col justify-between rounded-lg border border-gray-200 bg-white shadow '>
       <a href='#' className='self-center'>
-        <img className='rounded-t-lg p-8 h-72 w-72' src={item.image} alt='' />
+        <img className='h-72 w-72 rounded-t-lg p-8' src={item.image} alt='' />
       </a>
       <div className='px-5 pb-5'>
         <a href='#'>
@@ -32,6 +34,10 @@ const ItemCard = ({ item }) => {
       </div>
     </div>
   );
+};
+
+ItemCard.propTypes = {
+  item: PropTypes.array.isRequired,
 };
 
 export default ItemCard;
