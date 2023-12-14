@@ -25,12 +25,12 @@ const ItemCard = ({ item }) => {
         <div className='mt-2.5 flex items-center'>
           {/* FUTURE STAR RATING */}
         </div>
-        <div className='flex items-center my-3 p-3 h-10'>
-          <div className='flex justify-center items-center bg-slate-300 rounded-full p-2 cursor-pointer'>
+        <div className='my-3 flex h-10 items-center p-3'>
+          <div className='flex cursor-pointer items-center justify-center rounded-full bg-slate-300 p-2'>
             <FaMinus />
           </div>
-          <div className='text-2xl font-bold px-4'>{quantity}</div>
-          <div className='flex justify-center items-center bg-slate-300 rounded-full p-2 cursor-pointer'>
+          <div className='px-4 text-2xl font-bold'>{quantity}</div>
+          <div className='flex cursor-pointer items-center justify-center rounded-full bg-slate-300 p-2'>
             <FaPlus />
           </div>
         </div>
