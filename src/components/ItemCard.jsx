@@ -1,15 +1,12 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 
-const ItemCard = ({ item }) => {
+const ItemCard = ({ item, setQuantity }) => {
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
     currencyDisplay: 'narrowSymbol',
   }).format(item.price);
-
-  const [quantity, setQuantity] = useState(0);
 
   return (
     <div className=' flex w-full max-w-xs flex-col justify-between rounded-lg border border-gray-200 bg-white shadow '>
@@ -26,11 +23,17 @@ const ItemCard = ({ item }) => {
           {/* FUTURE STAR RATING */}
         </div>
         <div className='my-3 flex h-10 items-center p-3'>
-          <div className='flex cursor-pointer items-center justify-center rounded-full bg-slate-300 p-2'>
+          <div
+            className='flex cursor-pointer items-center justify-center rounded-full bg-slate-300 p-2'
+            onClick={() => setQuantity(item.id, 'subtract')}
+          >
             <FaMinus />
           </div>
-          <div className='px-4 text-2xl font-bold'>{quantity}</div>
-          <div className='flex cursor-pointer items-center justify-center rounded-full bg-slate-300 p-2'>
+          <div className='px-4 text-2xl font-bold'>{item.quantity}</div>
+          <div
+            className='flex cursor-pointer items-center justify-center rounded-full bg-slate-300 p-2'
+            onClick={() => setQuantity(item.id, 'add')}
+          >
             <FaPlus />
           </div>
         </div>
@@ -51,7 +54,8 @@ const ItemCard = ({ item }) => {
 };
 
 ItemCard.propTypes = {
-  item: PropTypes.array.isRequired,
+  item: PropTypes.object.isRequired,
+  setQuantity: PropTypes.func.isRequired,
 };
 
 export default ItemCard;
